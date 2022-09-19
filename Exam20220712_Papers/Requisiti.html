@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+
+
+<title>>Riviste e articoli</title>
+<link href=".css.css" rel="stylesheet" type="text/css">
+<style>
+@media print {  /* adjusted to print the html to a single-page pdf */
+body {
+	font-size: 10pt;
+}
+</style>
+</head>
+<body>
+
+
+<h1>Riviste e articoli</h1>
+
+<p>
+Il programma simula la gestione di riviste e articoli. 
+Tutte le classi si trovano nel package  <b>journals</b>. La classe principale &eacute; <b>Journals</b>. La classe <b>TestApp</b> nel package <b>example</b> contiene esempi e presenta i casi di test principali, ma non tutti. Le eccezioni vengono generate utilizzando la classe <b>JException</b>; devono essere effettuati solo i controlli specificati e non tutti quelli possibili. Se un metodo genera un'eccezione non vi &eacute; alcun cambiamento nei dati presenti nella classe principale. 
+Suggerimento: ogni volta che hai implementato un metodo, esegui TestApp per verificare il risultato.
+</p>
+
+<p>
+La documentazione JDK &eacute; accessibile all'URL <a href="https://oop.polito.it/api/" class="uri">https://oop.polito.it/api/</a>.
+</p>
+
+
+<h2>R1: Riviste, fattore di impatto</h2>
+
+<p>Il metodo <b>int addJournal(String name, double impactFactor)</b> inserisce una nuova rivista con nome e fattore di impatto. Genera un'eccezione se la rivista (rappresentato dal nome) esiste gi&agrave;. 
+Il risultato &eacute; il numero di caratteri del nome.</p>
+
+
+<p>Il metodo <b>double getImpactFactor(String name)</b> fornisce il fattore di impatto della rivista indicata dal nome. Genera un'eccezione se la rivista non esiste.</p>
+
+<p>Il metodo <b>groupJournalsByImpactFactor()</b> raggruppa i nomi delle riviste in base ai fattori di impatto crescenti. I nomi delle riviste sono elencati in ordine alfabetico.</p>
+
+
+<h2>R2: Autori, articoli</h2>
+
+<p>Il metodo <b>int registerAuthors (String... authorNames)</b> aggiunge autori. 
+Autori duplicati sono ignorati. Il risultato &eacute; il numero di autori inserito finora.</p>
+
+<p>
+Il metodo <b>String addPaper (String journalName, String paperTitle, String... authorNames)</b> aggiunge un articolo a una rivista. La rivista &eacute; indicata tramite il nome; il metodo scatena un'eccezione se la rivista non esiste. 
+L'articolo ha un titolo che deve essere unico nella rivista specificata, altrimenti deve essere generata un'eccezione. L'articolo pu&ograve; avere pi&ugrave; autori: se non tutti gli autori sono stati registrati viene generata un'eccezione.
+Il risultato &eacute; il nome della rivista seguito da ":" e dal titolo dell'articolo.
+</p>
+
+<p>Il metodo <b>giveNumberOfPapersByJournal()</b> fornisce il numero di articoli per ogni rivista. Le rivste sono ordinate alfabeticamente. Le riviste senza articoli sono ignorate.
+</p>
+
+<h2>R3: Fattori d'impatto</h2>
+
+<p>Il metodo<b>double getAuthorImpactFactor(String authorName)</b> fornisce il fattore di impatto per l'autore indicato. 
+Il fattore di impatto di un autore si ottiene sommando i fattori di impatto dei suoi articoli. Il fattore di impatto di un articolo &eacute; uguale a quello della rivista che lo contiene. 
+Il metodo genera un'eccezione se l'autore non &eacute; stato registrato. Se l'autore non ha articoli il risultato &eacute; 0.0.</p>
+
+
+<p>Il metodo <b>getImpactFactorsByAuthors()</b> raggruppa gli autori (in ordine alfabetico) per fattore di impatto crescente. Gli autori senza articoli vengono ignorati.</p>
+
+
+<h2>R4: Statistiche</h2>
+
+<p>Il metodo <b>getNumberOfPapersByAuthor()</b> fornisce il numero di articoli per autore; gli autori sono ordinati in ordine alfabetico. Gli autori senza articoli vengono ignorati.</p>
+
+<p>Il metodo  <b>String getJournalWithTheLargestNumberOfPapers()</b> fornisce il nome della rivista con il maggior numero di articoli. Se il maggior numero di articoli &eacute; comune a due o pi&ugrave; riviste il risultato &eacute; il nome della rivista che &eacute; la prima in ordine alfabetico.</p>
+
+
+</body>
+</html>
